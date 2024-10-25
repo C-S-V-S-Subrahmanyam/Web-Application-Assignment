@@ -664,3 +664,90 @@ header .song_side .popular_artists .item li img{
     border-radius: 50%;
     position: absolute;
 }
+
+
+@media screen and (max-width: 1200px) {
+    header {
+        width: 95%;
+        transition: 0.3s linear;
+    }
+    
+    header .menu_side, 
+    header .song_side {
+        width: 30%;
+    }
+    
+    header .song_side {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    header .menu_side {
+        z-index: 999;
+        width: 40%;
+        position: absolute;
+        transition: 1s linear;
+        transform: translateX(-100%);
+    }
+    header .song_side {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    header {
+        width: 100%;
+        height: 100vh;
+    }
+    
+    header .song_side nav .search {
+        width: 80%;
+    }
+    
+    header .song_side nav .user {
+        display: none;
+    }
+    
+    header .song_side .popular_song {
+        margin-top: 25px;
+    }
+    
+    header .menu_side {
+        width: 60%;
+    }
+    
+    header .master_play {
+        padding: 0 15px;
+    }
+    
+    header .master_play .icon {
+        margin: 0;
+    }
+    
+    header .master_play .icon .bi {
+        margin-right: 5px;
+    }
+    
+    header .master_play .vol {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    header .song_side nav ul li {
+        margin-right: 10px;
+    }
+    
+    header .song_side nav .search {
+        width: 150px;
+    }
+    
+    header .master_play .wave {
+        display: none;
+    }
+    
+    header .master_play .icon .bi {
+        margin-right: 2px;
+    }
+}
