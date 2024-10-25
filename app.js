@@ -318,3 +318,44 @@ left_scrolls.addEventListener('click', () => {
 right_scrolls.addEventListener('click', () => {
     item.scrollLeft += 330;
 })
+
+
+const menuSide = document.querySelector('.menu_side');
+const songSide = document.querySelector('.song_side');
+
+// Create a menu toggle button
+const menuToggle = document.createElement('button');
+menuToggle.innerHTML = '☰';
+menuToggle.style.cssText = `
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+`;
+
+document.body.appendChild(menuToggle);
+
+// Function to toggle menu
+function toggleMenu() {
+    menuSide.style.transform = menuSide.style.transform === 'translateX(0%)' ? 'translateX(-100%)' : 'translateX(0%)';
+}
+
+// Show/hide menu toggle button based on screen width
+function checkScreenSize() {
+    if (window.innerWidth <= 930) {
+        menuToggle.style.display = 'block';
+    } else {
+        menuToggle.style.display = 'none';
+        menuSide.style.transform = 'translateX(0%)';
+    }
+}
+
+menuToggle.addEventListener('click', toggleMenu);
+window.addEventListener('resize', checkScreenSize);
+checkScreenSize(); 
